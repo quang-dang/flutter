@@ -12,13 +12,38 @@
     </div>
   </div>
   <div class="col-xs-6">
+    <%= render '/components/post_form' %>
     <% for @p in @posts %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p><%= @p.content %></p>
+    <div class="panel panel-default post-panel">
+      <div class="panel-body row">
+        <div class="col-sm-1">
+          <%= image_tag "avatar.png", size: "50x50", class: "rounded-img" %>
+        </div>
+        <div class="col-sm-11">
+          <p class="post-title"><span class="post-owner"><%= User.find(@p.user_id).username %></span> - <span class="post-creation"><%=@p.created_at.to_formatted_s(:short) %></span></p>
+          <p class="post-content"><%= @p.content %></p>
+        </div>
+        <div class="col-sm-12">
+          <p class="post-links">
+            <span class="glyphicon glyphicon-comment g-links" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-retweet g-links" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-heart g-links" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-option-horizontal g-links" aria-hidden="true"></span>
+            <a href="">view conversation</a>
+            
+          </p>
+        </div>
       </div>
     </div>
     <% end %>
+     <div class="panel panel-default post-panel">
+      <div class="panel-body row">
+        <div class="col-sm-12">
+          <center><img src="/icon.png" width= "25px" height= "25px"></img>
+            <a href="#top"><p class="opacity: 0.7; color:grey">back to top<span class="glyphicon glyphicon-arrow-up g-links" aria-hidden="true"></span></p></a></center>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-xs-3">
     <div class="panel panel-default">

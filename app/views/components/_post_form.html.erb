@@ -1,11 +1,20 @@
 <%= form_for(@newPost) do |f| %>
 
-<center>
-  <div class="field">
-    <%= f.text_field :content, autofocus: true%>
+<div class="panel panel-default post-form-panel">
+  <div class="panel-body row">
+    <div class="col-sm-1">
+      <%= image_tag "avatar.png", size: "35x35", class: "rounded-img" %>
+    </div>
+    <div class="col-sm-11">
+      
+      <center>
+        <div class="field", style="margin-left:10px">
+          <%= f.text_field :content, autofocus: true, class: "form-control"%>
+          <span type="button" style="float:right;margin-top:3px", class: "btn btn-submit" ><%= f.submit "Add Post", class: "btn btn-primary"%></span>
+        </div>
+      </center>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit "Add Post" %>
-  </div>
-</center>
+</div>
+
 <% end %>

@@ -1,2 +1,47 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if !user_signed_in? %>
+  <style>
+    body{
+      background: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+      ), 
+      url("/bg.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    h1{
+      color: white;
+    }
+    .container-index {
+      margin-right: 15%;
+      margin-left: 15%;
+      font-weight: bold;
+    }
+    .text{
+      color: white;
+      font-weight: 300;
+    }
+    .footer-links {
+      text-align: center;
+      color: white;
+      margin-top: 30%;
+      font-size: 75%;
+    }
+  </style>
+  
+  <div class="container-index">
+    <h1>Welcome to Flutter.</h1>
+    <p class="text">
+      Connect with your buddies. Chat with new friends. <br>
+      Share your adventures. Have fun! <br>
+      Just like a blog, but with less characters!
+    </p>
+    
+    <p class="footer-links">About  Help  Blog  Status  Jobs  Terms  Privacy  Cookies  Ads  Info  Brand  Advertises  Businesses  Media  Developers  Directory  2016 Flutter</p>
+  </div>
+
+<% else %>
+  Signed in
+<% end %>

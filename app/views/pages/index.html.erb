@@ -43,23 +43,27 @@
   
   <div class="container-index row">
     <div class="col-sm-6">
-      <h1>Welcome to Flutter.</h1>
+      <h1>Welcome to Quakster.</h1>
       <p class="text">
-      Connect with your buddies. Chat with new friends. <br>
-      Share your adventures. Have fun! <br>
+      Quak! Quak! <br>
+      Share your daily thoughts! <br>
       Just like a blog, but with less characters!
       </p>
     </div>
     <div class="col-sm-6">
       <div class="log-in panel">
-        log in
+         <li role="separator" class="divider"></li>
+            <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to('Sign In', new_user_session_path) %></li>
+          
       </div>
       <div class="sign-up panel">
         sign up
       </div>
     </div>
     <div class="col-sm-12">
-      <p class="footer-links">About  Help  Blog  Status  Jobs  Terms  Privacy  Cookies  Ads Info  Brand  Advertises  Businesses  Media  Developers  Directory  2016 Flutter</p>
+      <p class="footer-links">This site is for educational purpose only. Contact creator at quangwdang@gmail.com for more information.</p>
     </div>
   </div>
   

@@ -10,10 +10,8 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password:ENV["GMAIL_PASSWORD"]
   }
-  # doesn't have to be Heroku, but you get the idea.
-  config.action_mailer.default_url_options = { :host => 'quakr.herokuapp.com' }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
+# doesn't have to be Heroku, but you get the idea.
+config.action_mailer.default_url_options = { :host => 'quakr.herokuapp.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

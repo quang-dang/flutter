@@ -10,7 +10,7 @@ Rails.application.configure do
     domain: "heroku.com",
     user_name: ENV['sendgrid_username'],
     password: ENV['sendgrid_password'],
-    authentication: ‘plain’,
+    authentication: "plain",
     enable_starttls_auto: true
   }
   # Code is not reloaded between requests.

@@ -11,7 +11,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['sendgrid_username'],
     :password       => ENV['sendgrid_password'],
-    :domain         => 'quakr.herokuapp.com',
+    :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
   

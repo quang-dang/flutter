@@ -11,6 +11,7 @@ Rails.application.configure do
   :authentication       => "plain",
   :enable_starttls_auto => true
   }
+  config.action_mailer.default_url_options = { :host => 'quakr.herokuapp.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

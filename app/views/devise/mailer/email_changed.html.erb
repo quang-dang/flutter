@@ -1,7 +1,61 @@
-<p>Hello <%= @email %>!</p>
+<style>
+  body{
+    background: linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.7)
+    ), 
+    url("/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  h2{
+    color: white;
+  }
+  .container-index {
+    margin-right: 15%;
+    margin-left: 15%;
+    font-weight: bold;
+  }
+  .text{
+    color: white;
+    font-weight: bold;
+  }
+  .footer-links {
+    text-align: center;
+    color: white;
+    margin-top: 30%;
+    font-size: 75%;
+  }
+  .panel-transparent {
+        background: none;
+    }
 
-<% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
-<% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
-<% end %>
+    .panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.2)!important;
+    }
+
+    .panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.5)!important;
+    }
+</style>
+
+<div class="container-index row">
+  <div class="col-sm-12" style="text-align:center">
+    <div class="panel panel-default panel-transparent">
+      <div class="panel-body">
+        <p class="text">Hello <%= @email %>!</p>
+
+        <% if @resource.try(:unconfirmed_email?) %>
+          <p class="text">We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+        <% else %>
+          <p class="text">We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+        <% end %>
+      </div>
+    </div>
+    
+  <div class="col-sm-12">
+    <p class="footer-links">This site is for educational purpose only. Contact creator at quangwdang@gmail.com for more information.</p>
+  </div>
+</div>

@@ -16,31 +16,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/home">Home </a></li>
-        <li><a href="#">Moments </a></li>
-        <li><a href="#">Notifications </a></li>
-        <li><a href="#">Messages </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <li>
-        <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Flutter">
-        </div>
-      </form>
       </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag "avatar.png", size: "25x25",class: "rounded-img" %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/user/<%= current_user.username %>">Profile</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Help</a></li>
-            <li role="separator" class="divider"></li>
             <li><%= link_to('Edit Profile', edit_user_registration_path) %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
           </ul>
         </li>
-        <li type="button" class="btn btn-primary navbar-btn">Add Post</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

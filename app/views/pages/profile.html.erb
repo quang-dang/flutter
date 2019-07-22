@@ -6,22 +6,24 @@
       </center>
     </div>
   </div>
-</div>
+</div>    
 <div class="row">
+  
   <div class="col-xs-3">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="row text-center">
-          <h4><%= current_user.username %></h4>
+          <h4><%= User.find_by_username(params[:id]).username %></h4>
+          <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
         </div>
       </div>
       <div class="panel-footer">
          <div class="row text-center">
           <div class="col-sm-6" style="font-size:80%, opacity: 0.7">posts</br>
-            <p style="color: blue; font-size: 200%"><%=current_user.posts.count%></p>
+            <p style="color: blue; font-size: 200%"><%=User.find_by_username(params[:id]).posts.count%></p>
           </div>
           <div class="col-sm-6" style="font-size:80%, opacity: 0.7">followers</br>
-            <p style="color: blue; font-size: 200%"><%=current_user.followers.count%></p>
+            <p style="color: blue; font-size: 200%"><%=User.find_by_username(params[:id]).followers.count%></p>
           </div>
         </div>
       </div>
@@ -29,10 +31,10 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <center>
-          <h5 style="color:grey; font-size: 125%">who to follow</h5>
+          <h5 style="color:grey; font-size: 125%;">who to follow</h5>
           <% for @u in @toFollow do %>
-            <p style="font-weight: bold; opacity: 0.85"><a href="/user/<%= @u.username %>"</a><%= @u.username %></p>
-          <% end %> 
+            <p style="font-weight: bold; opacity: 0.85;"><a href ="/user/<%= @u.username %>"><%= @u.username %></a></p>
+          <% end %>
         </center>
       </div>
     </div>
@@ -42,12 +44,15 @@
       </div>
     </div>
   </div>
+  
   <div class="col-xs-9">
+    <% if user_signed_in? %>
     <%= render '/components/post_form' %>
+    <% end %>
     <% for @p in @posts %>
-      <div class="panel panel-default post-panel">
-        <div class="panel-body row">
-          <div class="col-sm-1">
+    <div class="panel panel-default post-panel">
+      <div class="panel-body row">
+        <div class="col-sm-1">
           <%= image_tag "avatar.png", size: "50x50", class: "rounded-img" %>
         </div>
         <div class="col-sm-11">
@@ -58,7 +63,7 @@
       </div>
     </div>
     <% end %>
-    <div class="panel panel-default post-panel">
+     <div class="panel panel-default post-panel">
       <div class="panel-body row">
         <div class="col-sm-12">
           <center>
@@ -69,7 +74,11 @@
       </div>
     </div>
   </div>
+  
 </div>
+
+
+
 
 
 
